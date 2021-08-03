@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>RTChatter - Login</title>
+
+		<!-- update the version number as needed -->
+		<script defer src="/__/firebase/8.8.1/firebase-app.js"></script>
+		<!-- include only the Firebase features as you need -->
+		<!-- <script defer src="/__/firebase/8.8.1/firebase-auth.js"></script> -->
+		<script defer src="/__/firebase/8.8.1/firebase-firestore.js"></script>
+		<!-- <script defer src="/__/firebase/8.8.1/firebase-storage.js"></script> -->
+		<script defer src="/__/firebase/8.8.1/firebase-analytics.js"></script>
+		<script defer src="/__/firebase/8.8.1/firebase-remote-config.js"></script>
+		<script defer src="/__/firebase/8.8.1/firebase-performance.js"></script>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link rel="stylesheet" href="styles/index.css">
+
+		<script defer src="/__/firebase/init.js?useEmulator=true"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+		<script defer src="scripts/index.js"></script>
+	</head>
+	<body class="text-center">
+		<main class="form-signin" id="form-signin">
+			<span v-if="seen">
+				<form>
+					<h1 class="h3 mb-3 fw-normal">Login <small class="text-muted">RTChatter</small></h1>
+					
+					<div class="form-floating">
+						<input type="text" class="form-control" id="username" required>
+						<label for="username">Usuário</label>
+					</div>
+					<div class="form-floating">
+						<input type="text" class="form-control" id="color" required>
+						<label for="color">Cor (Em Hexadecimal)</label>
+					</div>
+
+					<button class="w-100 btn btn-lg btn-primary" onclick="loginUser()">Entrar</button>
+				</form>
+			</span>
+
+			<span v-if="logged">
+				<h1 class="h3 mb-3 fw-normal">RTChatter</h1>
+				<h2 class="h4 text-muted mb-3 fw-normal">Bem-vindo, {{ username }}</h2>
+				<button class="w-100 btn btn-lg btn-primary" onclick="window.location='rooms'">Ir para Salas</button>
+				<button class="w-100 btn-sm btn btn-link" onclick="logoutUser()">Sair</button>
+			</span>
+		</main>
+	</body>
+</html>
