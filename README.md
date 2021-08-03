@@ -6,7 +6,7 @@
 
 <h4 align="center">
   Website de bate-papo em tempo real.
-<h4 align="center"><a href="projeto.com">Clique para visitar o projeto</a></h4>
+<h4 align="center"><a href="https://rtchatter.web.app">Clique para visitar o projeto</a></h4>
 
 ---
 
